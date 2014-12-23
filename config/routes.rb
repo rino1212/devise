@@ -1,5 +1,5 @@
 Devise::Application.routes.draw do
-  devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
+  devise_for :users
   get "home/index"
   get "home/show"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -7,10 +7,7 @@ Devise::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-    # ログイン画面をホームにする
-  devise_scope :user do
-    root :to => "devise/sessions#new"
-  end
+  root to: "home#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
